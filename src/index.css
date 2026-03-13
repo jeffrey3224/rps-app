@@ -1,7 +1,8 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "PT Serif", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -13,6 +14,10 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@theme {
+  --color-main-purple: rgb(137,131,142);
 }
 
 

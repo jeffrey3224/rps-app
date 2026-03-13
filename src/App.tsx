@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import Rules from './components/Rules'
+import StandardRules from './components/StandardRules'
+import ChooseGameplay from './components/ChooseGameplay'
 
 function App() {
 
   return (
     <main className='w-[100vw] h-screen'>
-      <Rules />
+      <ChooseGameplay />
     </main>
     
   )
