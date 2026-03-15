@@ -1,8 +1,8 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.google.com/specimen/Barlow+Semi+Condensed");
 
 :root {
-  font-family: "PT Serif", sans-serif;
+  font-family: "Barlow", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -18,6 +18,7 @@
 
 @theme {
   --color-main-purple: rgb(137,131,142);
+  --color-radial-gradient-blue: radial-gradient(hsl(214,47%,23%) to hsl(237,48%, 15%));
 }
 
 
