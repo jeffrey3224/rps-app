@@ -1,21 +1,20 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
 import Standard from "./pages/Standard"
-import Spock from "./pages/Spock"
+import Bonus from "./pages/Bonus"
 
 
 function App() {
 
   return (
-    <main className="w-[100vw] h-screen flex justify-center items-center">
+    <div className="w-[100vw] min-h-screen flex justify-center items-center">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/standard" element={<Standard />} />
-        <Route path="/spock" element={<Spock />} />
+        <Route path="/bonus" element={<Bonus />} />
       </Routes>
-    </main>
-      
-    
+    </div>
+
   )
 }
 

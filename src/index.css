@@ -1,10 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap");
 @import "tailwindcss";
-@import url("https://fonts.google.com/specimen/Barlow+Semi+Condensed");
+
 
 :root {
-  font-family: "Barlow", sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  font-family: "Barlow Semi Condensed";
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -18,7 +19,8 @@
 
 @theme {
   --color-main-purple: rgb(137,131,142);
-  --color-radial-gradient-blue: radial-gradient(hsl(214,47%,23%) to hsl(237,48%, 15%));
+  --color-blue-gradient: radial-gradient(hsl(214,47%,23%), hsl(237,48%,15%));
+  --font-display: "Barlow Semi Condensed";
 }
 
 
