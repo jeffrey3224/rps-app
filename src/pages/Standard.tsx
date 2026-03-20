@@ -25,7 +25,6 @@ export default function Standard() {
 
     const getRandomNumber = () => {
         const number = Math.floor(Math.random() * 3);
-        console.log(number);
 
         return number;
     }
@@ -79,23 +78,25 @@ export default function Standard() {
     }
 
     return (
-        <>
-        <div className="relative w-full min-h-screen bg-radial from-[hsl(214,47%,23%)] to-[hsl(237,48%,15%)]">
+        <div className="flex flex-col flex-1">
+
             <Header score={score} resetScore={handleScoreReset}/>
 
-            <main>
+            <main className="relative w-full h-full flex flex-col items-center justify-center">
                 { !userSelection && <PickStandard onSelect={setUserSelection} />}
                 { userSelection && computerSelection && winner && <ResultStandard userPick={userSelection} compPick={computerSelection} winner={winner} resetGame={handleReset}/>}
-                <div className="absolute bottom-10 w-full flex flex-row justify-center items-center md:justify-start lg:justify-between gap-5 px-15">
-                    <BackToHome />
-                    <button onClick={handleShowRules} className="border-1 border-white px-10 py-3 rounded-xl hover:bg-white hover:text-blue-950 text-md font-bold cursor-pointer">
-                        RULES
-                    </button>
-                    
-                </div>
+    
             </main>
+
+            <footer className="flex flex-row gap-5 justify-center">
+                <BackToHome />
+                <button onClick={handleShowRules} className="border-2 border-white rounded-xl px-10 cursor-pointer hover:bg-white hover:text-blue-900 font-black">
+                    RULES
+                </button>
+            </footer>
+
+            {showRules && <StandardRules onSelect={setShowRules} showRules={showRules}/> }
+
         </div>
-        {showRules && <StandardRules onSelect={setShowRules} showRules={showRules}/> }
-        </>
     )
 }

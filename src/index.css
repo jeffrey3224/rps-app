@@ -17,6 +17,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  margin: 0;
+  background: radial-gradient(hsl(214,47%,23%), hsl(237,48%,15%));
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
 @theme {
   --color-main-purple: rgb(137,131,142);
   --color-blue-gradient: radial-gradient(hsl(214,47%,23%), hsl(237,48%,15%));

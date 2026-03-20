@@ -45,13 +45,16 @@ export default function PickStandard({onSelect}: Props) {
 
     return (
         <>
-            <img src="/images/bg-triangle.svg" className="z-[10] absolute w-[50vw] sm:w-[350px] lg:w-[400px] mt-10 sm:mt-15 md:mt-20 xl:mt-30 left-1/2 -translate-x-[50%] top-1/2 -translate-y-[50%]"/>
-            <section id="standard-game-play" className="absolute left-1/2 -translate-x-[50%] z-[20] top-1/2 -translate-y-[50%] mt-10 md:mt-15 xl:mt-25">
-                <div className="w-[90vw] max-w-[900px] flex flex-wrap justify-center gap-x-15 gap-y-7 md:gap-x-30 md:gap-y-15 mx-auto">
+            <img src="/images/bg-triangle.svg" className="z-10 w-[50vw] absolute left-1/2 top-1/2 -translate-x-[50%] -translate-y-[50%] pt-5 min-w-[180px] max-w-[270px]"/>
+
+            <section id="standard-game-play" className="relative z-20 flex flex-col">
+                <div className="w-full max-w-[900px] flex flex-wrap justify-center mx-auto gap-x-10">
                     <button onClick={() => handleSelection("paper")}><Selector action="paper" size={selectorSize}/></button>
                     <button onClick={() => handleSelection("scissors")}><Selector action="scissors" size={selectorSize}/></button>
                     <button onClick={() => handleSelection("rock")}><Selector action="rock" size={selectorSize}/></button>
                 </div>
+
+                
             </section>
         </>
     )

@@ -1,15 +1,39 @@
+import { useEffect, useState } from "react"
+
 type Props = {
   score: number
   resetScore: () => void
 }
 
 export default function Header({ score, resetScore }: Props) {
+
+    const [scoreResetter, setScoreResetter] = useState(false);
+
+    const scoreMilestone = (score: number) => {
+        if (score > 0 && score % 5 === 0) {
+            setScoreResetter(true);
+
+            const timer = setTimeout(() => {
+                setScoreResetter(false)
+            }, 5000);
+
+            return () => {
+                clearTimeout(timer);
+            }
+        }
+    }
+
+    useEffect(() => {
+        scoreMilestone(score);
+    }, [score]);
+
+
   return (
-    <header className="w-[clamp(250px,60vw,700px)] mx-auto mt-10 md:my-10 p-2 md:p-3 border border-white flex items-center justify-between rounded-xl">
+    <header className="w-[clamp(250px,60vw,700px)] mx-auto border border-white flex items-center justify-between rounded-xl">
 
       <img
         src="/images/logo.svg"
-        className="w-[clamp(80px,10vw,150px)]"
+        className="w-[clamp(80px,10vw,150px)] pl-2"
       />
 
       <div className="relative group bg-white w-[clamp(80px,12vw,140px)] rounded-xl flex py-2 px-5 flex-col items-center justify-center">
@@ -24,12 +48,13 @@ export default function Header({ score, resetScore }: Props) {
 
         <button
           onClick={resetScore}
-          className="absolute inset-0 hidden group-hover:flex items-center justify-center bg-black/80 font-bold text-lg rounded-xl cursor-pointer"
+          className={`absolute inset-0 ${scoreResetter ? "block text-sm px-2 font-[600]" : "hidden text-lg/5 font-bold"} group-hover:flex items-center justify-center bg-black/80 rounded-xl cursor-pointer transition-all duration-300 ease-in-out`}
         >
-          CLEAR SCORE
+          {scoreResetter ? "Click to Clear Score" : "CLEAR SCORE"}
         </button>
 
       </div>
+
     </header>
   )
 }
