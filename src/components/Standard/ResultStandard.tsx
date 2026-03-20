@@ -14,7 +14,6 @@ export default function ResultStandard({userPick, compPick, winner, resetGame}: 
     const [showHouse, setShowHouse] = useState(false);
     const [showResult, setShowResult] = useState(false);
     const [selectorSize, setSelectorSize] = useState(0);
-    const [scoreHelper, setScoreHelper] = useState(false);
 
     const handleResize = () => {
         if (window.innerWidth < 576) {
