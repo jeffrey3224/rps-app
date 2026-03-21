@@ -19,6 +19,18 @@ const elementTypes = [
         type: "Scissors",
         img: "/images/icon-scissors.svg",
         color: "bg-amber-300",
+    },
+
+    {
+        type: "Spock",
+        img: "/images/icon-spock.svg",
+        color: "bg-teal-500",
+    },
+
+    {
+        type: "Lizard",
+        img: "/images/icon-lizard.svg",
+        color: "bg-violet-500"
     }
 ]
 

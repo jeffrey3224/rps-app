@@ -5,13 +5,15 @@ type Props = {
     onSelect: (selection: string) => void
 }
 
-export default function PickStandard({onSelect}: Props) {
+export default function PickBonus({onSelect}: Props) {
 
     const [selectorSize, setSelectorSize] = useState(0);
 
     const standardOptions = [
-        "paper",
         "scissors",
+        "spock",
+        "paper",
+        "lizard",
         "rock"
     ];
 
@@ -49,17 +51,33 @@ export default function PickStandard({onSelect}: Props) {
             
     }, [])
 
+    const handleShape = (i: number) => {
+        if (i === 0) {
+            return "col-span-2 flex justify-center -mb-10"
+        }
+
+        else if (i === 1 || i === 4) {
+            return "flex justify-start"
+        }
+
+        else if (i === 2 || i === 3) {
+            return "flex justify-end"
+        }
+    }
+
     return (
         <>
-            <img src="/images/bg-triangle.svg" className="z-10 w-[50vw] absolute left-1/2 top-1/2 -translate-x-[50%] -translate-y-[50%] pt-5 min-w-[180px] max-w-[270px]"/>
+            <img src="/images/bg-pentagon.svg" className="z-10 w-[50vw] absolute left-1/2 top-1/2 -translate-x-[50%] -translate-y-[50%] pt-5 min-w-[180px] max-w-[270px]"/>
 
-            <section id="standard-game-play" className="relative z-20 flex flex-col">
-                <div className="w-full max-w-[900px] flex flex-wrap justify-center mx-auto gap-x-10">
-                    {standardOptions.map((option) => {
+            <section id="standard-game-play" className="relative z-20 w-full">
+                <div className="w-full grid grid-rows-3 gap-2">
+                    {standardOptions.map((option, i) => {
                         return (
-                            <button onClick={() => handleSelection(option)}>
-                                <Selector action={option} size={selectorSize}/>
-                            </button>
+                            <div className={handleShape(i)}>
+                                <button onClick={() => handleSelection(option)}>
+                                    <Selector action={option} size={selectorSize}/>
+                                </button>
+                            </div>
                         )
                     })}
                 </div>

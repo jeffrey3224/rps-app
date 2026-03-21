@@ -8,7 +8,7 @@ type Props = {
     resetGame: () => void;
 }
 
-export default function ResultStandard({userPick, compPick, winner, resetGame}: Props) {
+export default function ResultBonus({userPick, compPick, winner, resetGame}: Props) {
 
     const [showUser, setShowUser] = useState(false);
     const [showHouse, setShowHouse] = useState(false);
