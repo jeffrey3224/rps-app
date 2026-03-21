@@ -23,7 +23,7 @@ export default function PickBonus({onSelect}: Props) {
 
     const handleResize = () => {
         if (window.innerWidth < 576) {
-            setSelectorSize(window.innerWidth * .35);
+            setSelectorSize(window.innerWidth * .3);
         }
 
         else if (window.innerWidth < 768 && window.innerWidth > 575) {
@@ -53,7 +53,7 @@ export default function PickBonus({onSelect}: Props) {
 
     const handleShape = (i: number) => {
         if (i === 0) {
-            return "col-span-2 flex justify-center -mb-10"
+            return "col-span-2 flex justify-center -mb-20"
         }
 
         else if (i === 1 || i === 4) {
@@ -70,7 +70,7 @@ export default function PickBonus({onSelect}: Props) {
             <img src="/images/bg-pentagon.svg" className="z-10 w-[50vw] absolute left-1/2 top-1/2 -translate-x-[50%] -translate-y-[50%] pt-5 min-w-[180px] max-w-[270px]"/>
 
             <section id="standard-game-play" className="relative z-20 w-full">
-                <div className="w-full grid grid-rows-3 gap-2">
+                <div className="w-full grid grid-rows-3 gap-5">
                     {standardOptions.map((option, i) => {
                         return (
                             <div className={handleShape(i)}>
